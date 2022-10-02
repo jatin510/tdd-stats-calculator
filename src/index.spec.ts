@@ -39,4 +39,8 @@ describe('Stats calculator functions', () => {
   test('get the no. of values in the stats calculator', () => {
     expect(stats.valueCount()).toEqual(5);
   });
+
+  test('get the average of all the values in the stats calculator', () => {
+    expect(stats.getAverage()).toEqual(7.2);
+  });
 });

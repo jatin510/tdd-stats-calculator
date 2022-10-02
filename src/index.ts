@@ -21,6 +21,17 @@ export class Stats {
     return this.values.length;
   }
 
+  public getAverage() {
+    let sum = 0;
+    const { values } = this;
+
+    for (const elem of values) {
+      sum += elem;
+    }
+
+    return sum / values.length;
+  }
+
   public static create(inputProps: IInputProps) {
     const { values } = inputProps;
 
