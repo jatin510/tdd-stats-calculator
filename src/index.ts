@@ -8,6 +8,12 @@ export class Stats {
     this.values = inputProps.values;
   }
   public static create(inputProps: IInputProps) {
+    const { values } = inputProps;
+
+    if (values.includes(NaN)) {
+      throw new Error(`Invalid input NaN`);
+    }
+
     const stats = new Stats(inputProps);
     return stats;
   }
