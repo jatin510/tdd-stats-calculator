@@ -13,6 +13,10 @@ export class Stats {
     return Math.min(...this.values);
   }
 
+  public maximumValue() {
+    return Math.max(...this.values);
+  }
+
   public static create(inputProps: IInputProps) {
     const { values } = inputProps;
 

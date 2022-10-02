@@ -31,4 +31,10 @@ describe('Stats calculator functions', () => {
     const stats = Stats.create(inputProps);
     expect(stats.minimumValue()).toEqual(-12);
   });
+
+  test('get the maximum value in the stats calculator', () => {
+    const inputProps = { values: [1, 2, 21, -12, 24] };
+    const stats = Stats.create(inputProps);
+    expect(stats.maximumValue()).toEqual(24);
+  });
 });
