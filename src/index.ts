@@ -1,4 +1,4 @@
-interface IInputProps {
+export interface IInputProps {
   values: number[];
 }
 
