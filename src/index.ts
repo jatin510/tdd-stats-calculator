@@ -5,8 +5,11 @@ export interface IInputProps {
 export class Stats {
   values: number[];
 
-  private constructor(inputProps: IInputProps) {
-    this.values = inputProps.values;
+  constructor(values: IInputProps['values']) {
+    if (values.includes(NaN)) {
+      throw new Error(`Invalid input NaN`);
+    }
+    this.values = values;
   }
 
   public minimumValue() {
@@ -30,16 +33,5 @@ export class Stats {
     }
 
     return sum / values.length;
-  }
-
-  public static create(inputProps: IInputProps) {
-    const { values } = inputProps;
-
-    if (values.includes(NaN)) {
-      throw new Error(`Invalid input NaN`);
-    }
-
-    const stats = new Stats(inputProps);
-    return stats;
   }
 }

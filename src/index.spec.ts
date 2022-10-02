@@ -5,15 +5,15 @@ import { IInputProps, Stats } from './index';
 
 describe('Stats Calculator', () => {
   test('create an array of numbers', () => {
-    const inputProps = { values: [2, 4, 21, -8, 53, 40] };
-    const stats = Stats.create(inputProps);
-    expect(stats.values).toEqual(inputProps.values);
+    const values: IInputProps['values'] = [2, 4, 21, -8, 53, 40];
+    const stats = new Stats(values);
+    expect(stats.values).toEqual(values);
   });
 
   test('throw error when the inputProps is invalid such as "NaN"', () => {
-    const inputProps = { values: [2, 4, 21, NaN, 40] };
+    const values: IInputProps['values'] = [2, 4, 21, NaN, 40];
     const statsOutput = () => {
-      Stats.create(inputProps);
+      new Stats(values);
     };
     expect(statsOutput).toThrowError();
   });
@@ -21,11 +21,10 @@ describe('Stats Calculator', () => {
 
 describe('Stats calculator functions', () => {
   let stats: Stats;
-  let inputProps: IInputProps;
 
   beforeAll(() => {
-    inputProps = { values: [1, 2, 21, -12, 24] };
-    stats = Stats.create(inputProps);
+    const values: IInputProps['values'] = [1, 2, 21, -12, 24];
+    stats = new Stats(values);
   });
 
   test('get the minimum value in the stats calculator', () => {
