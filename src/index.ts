@@ -4,9 +4,15 @@ interface IInputProps {
 
 export class Stats {
   values: number[];
+
   private constructor(inputProps: IInputProps) {
     this.values = inputProps.values;
   }
+
+  public minimumValue() {
+    return Math.min(...this.values);
+  }
+
   public static create(inputProps: IInputProps) {
     const { values } = inputProps;
 

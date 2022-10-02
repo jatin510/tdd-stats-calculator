@@ -17,4 +17,18 @@ describe('Stats Calculator', () => {
     };
     expect(statsOutput).toThrowError();
   });
+
+  // test('get the minimum value in the stats calculator', () => {
+  //   const inputProps = { values: [1, 2, 21, -12, 24] };
+  //   const stats = Stats.create(inputProps);
+  //   expect(stats.minimumValue()).toEqual(-12);
+  // });
+});
+
+describe('Stats calculator functions', () => {
+  test('get the minimum value in the stats calculator', () => {
+    const inputProps = { values: [1, 2, 21, -12, 24] };
+    const stats = Stats.create(inputProps);
+    expect(stats.minimumValue()).toEqual(-12);
+  });
 });
