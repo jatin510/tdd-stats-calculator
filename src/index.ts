@@ -17,6 +17,10 @@ export class Stats {
     return Math.max(...this.values);
   }
 
+  public valueCount() {
+    return this.values.length;
+  }
+
   public static create(inputProps: IInputProps) {
     const { values } = inputProps;
 

@@ -37,4 +37,10 @@ describe('Stats calculator functions', () => {
     const stats = Stats.create(inputProps);
     expect(stats.maximumValue()).toEqual(24);
   });
+
+  test('get the no. of values in the stats calculator', () => {
+    const inputProps = { values: [1, 2, 21, -12, 24] };
+    const stats = Stats.create(inputProps);
+    expect(stats.valueCount()).toEqual(5);
+  });
 });
